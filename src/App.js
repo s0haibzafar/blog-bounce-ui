@@ -13,7 +13,7 @@ function App() {
 
             <Routes>
               <Route
-               path="/"
+               path="/home"
                exact
                element={<Home />}
               />
