@@ -9,20 +9,24 @@ function App() {
     <>
       <div className={styles.container}>
         <BrowserRouter>
-         <div>
+          <div className={styles.layout}>
             <Navbar />
 
             <Routes>
               <Route
-               path="/home"
-               exact
-               element={<Home />}
+                path="/home"
+                exact
+                element={ 
+                <div className={styles.main}>
+                  <Home />
+                </div>
+                }
               />
 
             </Routes>
-             
+
             <Footer />
-         </div>
+          </div>
         </BrowserRouter>
       </div>
     </>
