@@ -16,37 +16,37 @@ function App() {
               <Route
                 path="/"
                 exact
-                element={ 
-                <div className={styles.main}>
-                  <Home />
-                </div>
+                element={
+                  <div className={styles.main}>
+                    <Home />
+                  </div>
                 }
               />
 
               <Route
                 path="crypto"
                 exact
-                element={ <div className={styles.main}>Crypto Page</div>}
+                element={<div className={styles.main}>Crypto Page</div>}
               />
               <Route
                 path="blogs"
                 exact
-                element={ <div className={styles.main}>Blogs Page</div>}
+                element={<div className={styles.main}>Blogs Page</div>}
               />
               <Route
                 path="submit"
                 exact
-                element={ <div className={styles.main}>Submit Page</div>}
+                element={<div className={styles.main}>Submit Page</div>}
               />
               <Route
                 path="login"
                 exact
-                element={ <div className={styles.main}>Login Page</div>}
+                element={<div className={styles.main}>Login Page</div>}
               />
               <Route
                 path="register"
                 exact
-                element={ <div className={styles.main}>Register Page</div>}
+                element={<div className={styles.main}>Register Page</div>}
               />
 
             </Routes>
