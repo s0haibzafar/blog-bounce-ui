@@ -10,8 +10,12 @@ function Navbar() {
                 <NavLink to='crypto' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle} >Cryptocurrencies</NavLink>
                 <NavLink to='blogs' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}>Blogs</NavLink>
                 <NavLink to='submit' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}>Submit Blog</NavLink>
-                <NavLink to='login' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}>LogIn</NavLink>
-                <NavLink to='register' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}>Register</NavLink>
+                <NavLink to='login' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}>
+                    <button className={styles.logInBtn} >LogIn</button>
+                </NavLink>
+                <NavLink to='register' className={({ isActive }) => isActive ? styles.activeStyle : styles.inActiveStyle}>
+                    <button className={styles.registerBtn} >Register</button>
+                </NavLink>
             </nav>
             <div></div>
         </>
