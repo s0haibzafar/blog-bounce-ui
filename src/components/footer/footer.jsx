@@ -1,6 +1,7 @@
+import styles from './footer.module.css'
 function Footer(){
     return(
-        <p> &copy; BlogBounce 2023 </p>
+        <p className={styles.footer}> &copy; BlogBounce 2023 </p>
     );
 }
 
