@@ -24,7 +24,7 @@ function Navbar() {
                     <button className={styles.registerBtn} >Register</button>
                 </NavLink></div>}
             </nav>
-            <div></div>
+            <div className={styles.seperator}></div>
         </>
     );
 }
