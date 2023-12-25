@@ -8,7 +8,7 @@ const initilaState = {
 }
 
 export const userSlice = createSlice({
-    name: 'user',
+    name: 'user',                               // use this name when we import userSlice in other file
     initialState: initilaState,
     reducers: {
         setUser: (state, action) => {
