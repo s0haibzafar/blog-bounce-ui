@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer";
 import Home from "./pages/home/home";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
+import Errorr from "./pages/home/error/error";
 
 function App() {
   const isAtuh = false;
@@ -56,6 +57,11 @@ function App() {
                 path="register"
                 exact
                 element={<div className={styles.main}>Register Page</div>}
+              />
+
+              <Route
+                path="*"
+                element={<div className={styles.main}><Errorr/></div>}
               />
 
             </Routes>
