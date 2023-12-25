@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initilaState ={
+const initilaState = {
     _id: '',
     email: '',
     username: '',
@@ -11,11 +11,27 @@ export const userSlice = createSlice({
     name: 'user',
     initialState: initilaState,
     reducers: {
-        setUser : (state, action) => {},
-        resetUser : (state, action) => {}
-    }
-}) 
+        setUser: (state, action) => {
+            //when data come form api and we can get api data by action
+            const { _id, email, username, auth } = action.payload;
 
-export const {setUser, resetUser} = userSlice.actions;
+            //now we will date state
+            state._id = _id;
+            state.email = email;
+            state.username = username;
+            state.auth = auth;
+
+        },
+        resetUser: (state, action) => {
+            //now we will reset state
+            state._id = '';
+            state.email = '';
+            state.username = '';
+            state.auth = false;
+        }
+    }
+})
+
+export const { setUser, resetUser } = userSlice.actions;
 
 export default userSlice.reducer;
