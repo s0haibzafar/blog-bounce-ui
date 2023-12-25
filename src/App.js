@@ -2,9 +2,12 @@ import Navbar from "./components/navbar/navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import Home from "./pages/home/home";
-import styles from './App.module.css'
+import styles from './App.module.css';
+import Protected from "./components/Protected/protected";
+import Errorr from "./pages/home/error/error";
 
 function App() {
+  const isAtuh = false;
   return (
     <>
       <div className={styles.container}>
@@ -31,12 +34,19 @@ function App() {
               <Route
                 path="blogs"
                 exact
-                element={<div className={styles.main}>Blogs Page</div>}
+                element={
+                  <Protected isAtuh={isAtuh} >
+                    <div className={styles.main}>Blogs Page</div>
+                  </Protected>}
               />
               <Route
                 path="submit"
                 exact
-                element={<div className={styles.main}>Submit Page</div>}
+                element={
+                  <Protected isAtuh={isAtuh} >
+                    <div className={styles.main}>Submit Page</div>
+                  </Protected>
+                }
               />
               <Route
                 path="login"
@@ -47,6 +57,11 @@ function App() {
                 path="register"
                 exact
                 element={<div className={styles.main}>Register Page</div>}
+              />
+
+              <Route
+                path="*"
+                element={<div className={styles.main}><Errorr/></div>}
               />
 
             </Routes>
