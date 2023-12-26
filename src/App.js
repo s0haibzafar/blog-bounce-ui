@@ -4,7 +4,7 @@ import Footer from "./components/footer/footer";
 import Home from "./pages/home/home";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
-import Errorr from "./pages/home/error/error";
+import Errorr from "./pages/error/error";
 
 function App() {
   const isAtuh = false;
