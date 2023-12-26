@@ -5,8 +5,7 @@ import Home from "./pages/home/home";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
 import Errorr from "./pages/error/error";
-// import login from "./pages/login/login";
-import Login from "./pages/login/login";
+import Login from "./pages/login/Login";
 
 function App() {
   const isAtuh = false;

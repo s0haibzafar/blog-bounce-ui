@@ -1,9 +1,46 @@
+import { useState } from "react";
 import styles from "./login.module.css"
 import TextInput from "../../components/textInput/textInput";
 import loginSchema from "../../schemas/loginschema";
 import { useFormik } from "formik";
+import { login } from "../../api/internal";
+import { setUser } from "../../store/userSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [error, setError] = useState('');
+
+    const handlelogin = async () => {
+
+        const data = {
+            username: values.username,
+            password: values.password,
+        }
+        const response = await login(data)
+
+        if (response.status === 200) {
+            // 1. setUser of  state
+            const user = {
+                _id: response.data.user._id,
+                email: response.data.user.email,
+                username: response.data.user.username,
+                auth: response.data.user.auth,
+            };
+
+            dispatch(setUser(user));
+            // 2. redirect on home page
+            navigate('/');
+        }
+        else if (response.code === 'ERR_BAD_REQUEST') {
+            //display error message
+            setError(response.response.data.errorMessage)
+        }
+
+
+    }
 
     const { values, touched, handleBlur, handleChange, errors } = useFormik({
         initialValues: {
@@ -35,8 +72,8 @@ function Login() {
                 error={errors.password && touched.password ? 1 : undefined}
                 errormessage={errors.password}
             />
-            <button className={styles.loginButton} >Login </button>
-            <span >Don't have an account? <button className={styles.createAccount} >Register</button> </span>
+            <button className={styles.loginButton} onClick={handlelogin} >Login </button>
+            <span >Don't have an account? <button className={styles.createAccount} onClick={() => navigate('/register')} >Register</button> </span>
 
         </div>
     );
