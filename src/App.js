@@ -4,7 +4,9 @@ import Footer from "./components/footer/footer";
 import Home from "./pages/home/home";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
-import Errorr from "./pages/home/error/error";
+import Errorr from "./pages/error/error";
+// import login from "./pages/login/login";
+import Login from "./pages/login/login";
 
 function App() {
   const isAtuh = false;
@@ -51,7 +53,7 @@ function App() {
               <Route
                 path="login"
                 exact
-                element={<div className={styles.main}>Login Page</div>}
+                element={<div className={styles.main}> <Login />  </div>}
               />
               <Route
                 path="register"
@@ -61,7 +63,7 @@ function App() {
 
               <Route
                 path="*"
-                element={<div className={styles.main}><Errorr/></div>}
+                element={<div className={styles.main}><Errorr /></div>}
               />
 
             </Routes>
