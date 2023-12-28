@@ -7,9 +7,10 @@ import Protected from "./components/Protected/protected";
 import Errorr from "./pages/error/error";
 // import Login from "./pages/login/Login";
 import Login from "./pages/login/login";
+import { useSelector } from "react-redux";
 
 function App() {
-  const isAtuh = false;
+  const isAtuh = useSelector((state)=> state.user.auth);
   return (
     <>
       <div className={styles.container}>

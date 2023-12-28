@@ -74,7 +74,7 @@ function Login() {
             />
             <button className={styles.loginButton} onClick={handlelogin} >Login </button>
             <span >Don't have an account? <button className={styles.createAccount} onClick={() => navigate('/register')} >Register</button> </span>
-            { error != '' ? <p className={styles.errorMessages} >{error}</p> : ""  }
+            { error !== '' ? <p className={styles.errorMessages} >{error}</p> : ""  }
         </div>
     );
 
