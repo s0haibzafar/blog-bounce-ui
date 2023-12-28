@@ -5,8 +5,8 @@ import Home from "./pages/home/home";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
 import Errorr from "./pages/error/error";
-// import Login from "./pages/login/Login";
 import Login from "./pages/login/login";
+import Register from "./pages/register/register";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
               <Route
                 path="register"
                 exact
-                element={<div className={styles.main}>Register Page</div>}
+                element={<div className={styles.main}><Register /></div>}
               />
 
               <Route
