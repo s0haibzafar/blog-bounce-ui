@@ -27,7 +27,7 @@ function Login() {
                 _id: response.data.user._id,
                 email: response.data.user.email,
                 username: response.data.user.username,
-                auth: response.data.user.auth,
+                auth: response.data.auth,
             };
 
             dispatch(setUser(user));
@@ -74,7 +74,7 @@ function Login() {
             />
             <button className={styles.loginButton} onClick={handlelogin} >Login </button>
             <span >Don't have an account? <button className={styles.createAccount} onClick={() => navigate('/register')} >Register</button> </span>
-
+            { error != '' ? <p className={styles.errorMessages} >{error}</p> : ""  }
         </div>
     );
 
