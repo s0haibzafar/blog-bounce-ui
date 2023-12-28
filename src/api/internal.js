@@ -3,21 +3,35 @@ import axios from "axios";
 const api = axios.create({
     baseURL: process.env.REACT_APP_INTERNAL_API_PATH,
     withCredentials: true,
-    headers:{
+    headers: {
         "Content-Type": "application/json",
     },
 });
 
-export const login = async (data)=>{
+export const login = async (data) => {
     let response;
 
-    try{
+    try {
         response = await api.post('/login', data)
     }
-    catch(e){
+    catch (e) {
         return e;
     }
 
     return response;
 
-} 
+}
+
+export const register = async (data) => {
+
+    let response;
+
+    try {
+        response = await api.post('/register', data)
+    }
+    catch (e) {
+        return e;
+    }
+
+    return response;
+}
