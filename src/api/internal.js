@@ -35,3 +35,17 @@ export const register = async (data) => {
 
     return response;
 }
+
+export const logout = async () => {
+
+    let response;
+
+    try {
+        response = await api.post('/logout')
+    }
+    catch (e) {
+        return e;
+    }
+
+    return response;
+}
