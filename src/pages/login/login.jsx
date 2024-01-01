@@ -36,7 +36,11 @@ function Login() {
         }
         else if (response.code === 'ERR_BAD_REQUEST') {
             //display error message
-            setError(response.response.data.errorMessage)
+            setError(response.response.data.message)
+        }
+        else if (response.code === 'ERR_BAD_RESPONSE') {
+            //display error message
+            setError(response.response.data.message)
         }
 
 
