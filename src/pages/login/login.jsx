@@ -76,9 +76,13 @@ function Login() {
                 error={errors.password && touched.password ? 1 : undefined}
                 errormessage={errors.password}
             />
-            <button className={styles.loginButton} onClick={handlelogin} >Login </button>
+            <button
+                className={styles.loginButton}
+                onClick={handlelogin}
+                disabled={!values.username || !values.password || error.username || error.password}
+            >Login </button>
             <span >Don't have an account? <button className={styles.createAccount} onClick={() => navigate('/register')} >Register</button> </span>
-            { error !== '' ? <p className={styles.errorMessages} >{error}</p> : ""  }
+            {error !== '' ? <p className={styles.errorMessages} >{error}</p> : ""}
         </div>
     );
 
