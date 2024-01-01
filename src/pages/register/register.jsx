@@ -39,7 +39,11 @@ function Register() {
         }
         else if (response.code === 'ERR_BAD_REQUEST') {
             //display error message
-            setError(response.response.data.errorMessage)
+            setError(response.response.data.message)
+        }
+        else if (response.code === 'ERR_BAD_RESPONSE') {
+            //display error message
+            setError(response.response.data.message)
         }
 
 
@@ -108,7 +112,20 @@ function Register() {
                 error={errors.confirmPassword && touched.confirmPassword ? 1 : undefined}
                 errormessage={errors.confirmPassword}
             />
-            <button className={styles.loginButton} onClick={handleregister} >Register </button>
+            <button
+                className={styles.loginButton}
+                onClick={handleregister}
+                disabled={
+                    !values.username ||
+                    !values.name ||
+                    !values.password ||
+                    !values.confirmPassword ||
+                    errors.username ||
+                    errors.name ||
+                    errors.password ||
+                    errors.confirmPassword
+                }
+            >Register </button>
             <span >Already have an account? <button className={styles.createAccount} onClick={() => navigate('/login')} >LogIn</button> </span>
             {error !== '' ? <p className={styles.errorMessages} >{error}</p> : ""}
         </div>
