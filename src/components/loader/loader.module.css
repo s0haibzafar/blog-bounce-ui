@@ -1,12 +1,9 @@
-.navbar{
+.loadWrapper{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
-    padding: 20px 0;
-    margin: 20px auto;
-    width: 80%;
+    height: calc(100vh - 400px);
 }
-.logo{
-    font-size: 32px;
-    font-weight: 800;
-}
+
