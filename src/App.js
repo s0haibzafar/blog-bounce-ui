@@ -2,6 +2,7 @@ import Navbar from "./components/navbar/navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import Home from "./pages/home/home";
+import Cryptocoin from "./pages/cryptocoin/cryptocoin";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
 import Errorr from "./pages/error/error";
@@ -10,7 +11,7 @@ import Register from "./pages/register/register";
 import { useSelector } from "react-redux";
 
 function App() {
-  const isAtuh = useSelector((state)=> state.user.auth);
+  const isAtuh = useSelector((state) => state.user.auth);
   return (
     <>
       <div className={styles.container}>
@@ -32,7 +33,7 @@ function App() {
               <Route
                 path="crypto"
                 exact
-                element={<div className={styles.main}>Crypto Page</div>}
+                element={<div className={styles.main}><Cryptocoin /></div>}
               />
               <Route
                 path="blogs"
