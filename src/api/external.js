@@ -24,7 +24,7 @@ export const getCrypto = async()=>{
     let response;
 
     try{
-        response = await axios.get(NEWS_API_ENDPOINT);
+        response = await axios.get(CRYPTO_API_ENDPOINT);
         response = response.data;
     }
     catch(e){
