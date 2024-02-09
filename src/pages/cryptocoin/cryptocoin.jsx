@@ -23,6 +23,9 @@ function Cryptocoin() {
         return (<Loader text="cryptocurrencies" />)
     }
 
+    const negativeStyle = { color: '#ea3943' }
+    const positiveStyle = { color: '#16c784' }
+
     return (
         <table className={styles.table}>
             <thead >
@@ -36,9 +39,24 @@ function Cryptocoin() {
             </thead>
             <tbody>
                 {data.map((coin) => (
-                    <tr key={coin.id}  className={styles.tableRow} >x
-                     <td>{coin.market_cap_rank}</td>
+                    <tr key={coin.id} className={styles.tableRow} >
+                        <td>{coin.market_cap_rank}</td>
+                        <td>
+                            <div className={styles.logo}>
+                                <img src={coin.image} width="40" height={40} alt="coin" />{coin.name}
+                            </div>
+                        </td>
+                        <td>
+                            <div className={styles.symbol}>
+                                {coin.symbol}
+                            </div>
+                        </td>
+                        <td>{coin.current_price}</td>
+                        <td style={coin.price_change_percentage_24h < 0 ? negativeStyle : positiveStyle} >
+                            {coin.price_change_percentage_24h}
+                        </td>
                     </tr>
+
                 ))}
             </tbody>
         </table>
