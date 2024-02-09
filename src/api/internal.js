@@ -49,3 +49,28 @@ export const logout = async () => {
 
     return response;
 }
+
+export const getAllBlogs = async () => {
+    let response;
+
+    try{
+        response = await api.get('/blog/all')
+    }
+    catch(e){
+    }
+
+    return response;
+}
+
+export const submitBlog = async (data) => {
+    let response;
+
+    try{
+        response = await api.post('/blog', data)
+    }
+    catch(e){
+        return e;
+    }
+
+    return response;
+}
