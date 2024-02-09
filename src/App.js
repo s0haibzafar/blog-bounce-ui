@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import Home from "./pages/home/home";
 import Cryptocoin from "./pages/cryptocoin/cryptocoin";
+import Blog from "./pages/blog/blog";
+import SubmitBlog from "./pages/submitBlog/submitBlog";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
 import Errorr from "./pages/error/error";
@@ -40,7 +42,7 @@ function App() {
                 exact
                 element={
                   <Protected isAtuh={isAtuh} >
-                    <div className={styles.main}>Blogs Page</div>
+                    <div className={styles.main}><Blog /></div>
                   </Protected>}
               />
               <Route
@@ -48,7 +50,7 @@ function App() {
                 exact
                 element={
                   <Protected isAtuh={isAtuh} >
-                    <div className={styles.main}>Submit Page</div>
+                    <div className={styles.main}><SubmitBlog /> </div>
                   </Protected>
                 }
               />
