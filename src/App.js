@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer";
 import Home from "./pages/home/home";
 import Cryptocoin from "./pages/cryptocoin/cryptocoin";
 import Blog from "./pages/blog/blog";
+import BlogDetail from "./pages/blogDetail/blogDetail";
 import SubmitBlog from "./pages/submitBlog/submitBlog";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
@@ -43,6 +44,14 @@ function App() {
                 element={
                   <Protected isAtuh={isAtuh} >
                     <div className={styles.main}><Blog /></div>
+                  </Protected>}
+              />
+              <Route
+                path="blog/:id"
+                exact
+                element={
+                  <Protected isAtuh={isAtuh} >
+                    <div className={styles.main}><BlogDetail /></div>
                   </Protected>}
               />
               <Route
