@@ -68,9 +68,9 @@ function BlogDetail() {
     }
 
 
-    // if (blog.length === 0) {
-    //     return (<Loader text='blogs' />);
-    // }
+    if (blog.length === 0) {
+        return (<Loader text='blog details' />);
+    }
 
     return (
         <div className={styles.detailWrapper}>
@@ -86,8 +86,8 @@ function BlogDetail() {
                 {
                     ownsBlog && (
                         <div className={styles.controls} >
-                            <button className={styles.edit} onClick={()=>{}} >Edit</button>
-                            <button className={styles.delete} onClick={deleteBlogHandler} >Delete</button>
+                            <button className={styles.editButton} onClick={()=>{navigate(`/blog/update/${blog._id}`)}} >Edit</button>
+                            <button className={styles.deleteButton} onClick={deleteBlogHandler} >Delete</button>
                         </div>
                     )
                 }
