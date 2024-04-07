@@ -5,6 +5,7 @@ import Home from "./pages/home/home";
 import Cryptocoin from "./pages/cryptocoin/cryptocoin";
 import Blog from "./pages/blog/blog";
 import BlogDetail from "./pages/blogDetail/blogDetail";
+import UpdateBlog from "./pages/updateBlog/blogDetail/updateBlog";
 import SubmitBlog from "./pages/submitBlog/submitBlog";
 import styles from './App.module.css';
 import Protected from "./components/Protected/protected";
@@ -52,6 +53,14 @@ function App() {
                 element={
                   <Protected isAtuh={isAtuh} >
                     <div className={styles.main}><BlogDetail /></div>
+                  </Protected>}
+              />
+              <Route
+                path="blog/update/:id"
+                exact
+                element={
+                  <Protected isAtuh={isAtuh} >
+                    <div className={styles.main}><UpdateBlog /></div>
                   </Protected>}
               />
               <Route
