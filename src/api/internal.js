@@ -126,3 +126,16 @@ export const deleteBlog = async (id) => {
 
     return response;
 }
+
+export const updateBlog = async (data) => {
+    let response;
+
+    try {
+        response = await api.put('/blog', data)
+    }
+    catch (e) {
+        return e;
+    }
+
+    return response;
+}
