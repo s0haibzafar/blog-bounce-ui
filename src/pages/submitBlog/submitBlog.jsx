@@ -28,7 +28,7 @@ function SubmitBlog() {
         }
         const response = await submitBlog(data);
 
-        if (response.state === 201) {
+        if (response.status === 201) {
             navigate('/');
         }
     }
