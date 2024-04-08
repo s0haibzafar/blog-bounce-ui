@@ -13,10 +13,15 @@ import Errorr from "./pages/error/error";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import { useSelector } from "react-redux";
+import useAutoLogin from "./hooks/useAutoLogin";
+import Loader from "./components/loader/loader";
 
 function App() {
   const isAtuh = useSelector((state) => state.user.auth);
-  return (
+
+  const loading = useAutoLogin();
+
+  return loading ? <Loader text='...' /> : (
     <>
       <div className={styles.container}>
         <BrowserRouter>
