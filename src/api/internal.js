@@ -139,3 +139,31 @@ export const updateBlog = async (data) => {
 
     return response;
 }
+
+//auto token refresh
+
+// here we will use http intercepter
+//protected-resource -> 401
+// refresh  -> authenticated state 
+// protected -resource
+
+api.interceptors.response.use(
+    config => config,
+    async(error)=>{
+        const originalReq = error.config;
+
+        // here we will chk if we req protected resource then status is 401
+        if(error.response.status === 401 && originalReq && !originalReq._isRetry){
+            originalReq.isRetry = true
+            try{
+                await axios.get(`${process.env.REACT_APP_INTERNAL_API_PATH}/refresh`,{
+                    withCredentials: true
+                });
+                return api.request(originalReq);
+            }
+            catch(error){
+                return error;
+            }
+        }
+    }
+);
